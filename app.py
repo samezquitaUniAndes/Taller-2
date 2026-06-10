@@ -21,7 +21,15 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
-    # To do: Completar la función 
+    # Leer el archivo CSV con los datos históricos y el pronóstico
+    df = pd.read_csv("datos_energia.csv")
+    # La primera columna contiene la fecha/hora; la convertimos a datetime
+    date_col = df.columns[0]
+    df[date_col] = pd.to_datetime(df[date_col])
+    # La fecha debe ser el índice del DataFrame
+    df = df.set_index(date_col)
+    # La función debe retornar el DataFrame
+    return df
     
 
 # Cargar datos

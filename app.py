@@ -8,17 +8,13 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 
-
-
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
 )
-app.title = "Dashboard energia"
-
+app.title = "Dashboard energia cambiado por edward"
 server = app.server
 app.config.suppress_callback_exceptions = True
-
 
 # Load data from csv
 def load_data():
